@@ -94,7 +94,7 @@ def jcs_strategy_I_profit(company_df,seed_money=10000):
       else:
         net_worth.append(net_worth_value)
 
-  return shares*company_df['Close'][length-1] + money
+  return [shares*company_df['Close'][length-1] + money,shares,money]
 
 
 
@@ -144,5 +144,7 @@ def jcs_strategy_II_profit(company_df,seed_money=10000):
         net_worth.append(net_worth_value)
       else:
         net_worth.append(net_worth_value)
+
+  #print(shares*company_df['Close'][length-1] + money)
 
   return [shares*company_df['Close'][length-1] + money,shares,money]
