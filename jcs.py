@@ -111,7 +111,7 @@ def jcs_strategy_II_profit(company_df,seed_money=10000):
   net_worth_value = money
 
   for i in range(length):
-    if((company_df['Bullish swing'][i]==True)&(company_df['Bullish pinbar'][i]==True)&(flag == 0)):
+    if((company_df['Bullish engulfing'][i]==True)&(flag == 0)):
       #print('Buying share at: ')
       #print(company_df['Close'][i])
       #print('Date: ')
@@ -126,7 +126,7 @@ def jcs_strategy_II_profit(company_df,seed_money=10000):
       #print('\n')
       flag = 1
 
-    elif((company_df['Bearish swing'][i]==True)&(company_df['Bearish pinbar'][i]==True)&(flag == 1)):
+    elif((company_df['Bearish engulfing'][i]==True)&(flag == 1)):
       #print('Selling share at: ')
       #print(company_df['Close'][i])
       new_money = shares*company_df['Close'][i]
